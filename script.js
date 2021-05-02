@@ -66,5 +66,5 @@ yesterday = () => {
 
 const maxDate = yesterday();
 
-console.log(maxDate)
+console.log(`yesterday: ${maxDate}`);
 
