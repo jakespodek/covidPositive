@@ -39,28 +39,32 @@ fetch(url)
 
     })
 
-const today = new Date()
-    const yesterday = new Date(today)
-    yesterday.setDate(yesterday.getDate() - 1)
-    today.toDateString();
-    yesterday.toDateString();
-    console.log(`yesterday: ${yesterday}`);
-    // document.getElementById("dateInput").setAttribute("max", yesterday);
+// // const today = new Date()
+//     const yesterday = new Date()
+//     yesterday.setDate(yesterday.getDate() - 1)
+//     // today.toDateString();
+//     console.log(`yesterday: ${yesterday}`);
+//     yesterday.toDateString();
+//     // document.getElementById("dateInput").setAttribute("max", yesterday);
 
 
 
 
 
-function maxDate(date) {
-    var d = new Date(date),
-        month = '' + (d.getMonth() + 1),
-        day = '' + d.getDate(),
-        year = d.getFullYear();
+yesterday = () => {
+    const date = new Date()
+    date.setDate(date.getDate() - 1)
+    month = '' + (date.getMonth() + 1),
+    day = '' + date.getDate(),
+    year = date.getFullYear();
     if (month.length < 2)
         month = '0' + month;
     if (day.length < 2)
         day = '0' + day;
     return [year, month, day].join('-');
 }
-console.log(maxDate(yesterday));
+
+const maxDate = yesterday();
+
+console.log(maxDate)
 
