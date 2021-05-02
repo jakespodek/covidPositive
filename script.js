@@ -26,7 +26,7 @@ const date = document.querySelector('input[type="date"]');
 
 app.displayData = (data) => {
     const ul = document.querySelector('.dataList');
-
+    data.splice(11, 1);
     data.forEach((item) => {
         const li = document.createElement('li');
         li.innerHTML = `<h2>${item.province}</h2>`
@@ -50,7 +50,7 @@ app.gimmeData = () => {
         })
 
         .then((jsonResponse) => {
-            console.log(jsonResponse)
+            console.log(jsonResponse);
             app.displayData(jsonResponse.summary);
         })
     console.log(dateValue);
@@ -67,7 +67,7 @@ app.dateSelector = () => {
 };
 
 app.yesterday = () => {
-    const date = new Date()
+    const date = new Date();
 
     date.setDate(date.getDate() - 1)
     month = '' + (date.getMonth() + 1),
