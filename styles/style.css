@@ -221,7 +221,7 @@ html {
           box-sizing: inherit;
 }
 
-.sr-only {
+.srOnly {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -238,6 +238,10 @@ html {
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
+}
+
+h2 {
+  font-size: 1.5rem;
 }
 
 ul {
@@ -260,8 +264,4 @@ a {
   margin: 0 auto;
   max-width: "";
   width: "";
-}
-
-h1 {
-  color: red;
 }

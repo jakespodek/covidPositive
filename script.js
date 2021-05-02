@@ -21,24 +21,36 @@
 const app = {};
 
 const date = document.querySelector('input[type="date"]');
-
+const ul = document.querySelector('.dataList');
 
 
 app.displayData = (data) => {
-    const ul = document.querySelector('.dataList');
     data.splice(11, 1);
     data.forEach((item) => {
         const li = document.createElement('li');
-        li.innerHTML = `<h2>${item.province}</h2>`
+        li.className = `box`;
+        li.innerHTML = 
+        `  
+        <h2 class=${item.province}>${item.province}</h2>
+        <p>Recovered on this day: ${item.recovered}</p>
+        <p>Total Recovered: ${item.cumulative_recovered}</p>
+        <p>Vaccinated on this day: ${item.avaccine}</p>
+        <p>Total Vaccinated: ${item.cumulative_avaccine}</p>
+        `
         ul.append(li);
     })
-
+    
+    document.querySelector('.BC').innerHTML = `<h2>British Columbia</h2>`
+    document.querySelector('.NL').innerHTML = `<h2>Newfoundland and Labrador</h2>`
+    document.querySelector('.NWT').innerHTML = `<h2>Northwest Territories</h2>`
+    document.querySelector('.PEI').innerHTML = `<h2>Prince Edward Island</h2>`
 }
 
 
 app.gimmeData = () => {
     const url = new URL('https://api.opencovid.ca/summary')
     const dateValue = date.value;
+    document.getElementById('dateDisplay').innerText = `As of ${dateValue}:`
 
     url.search = new URLSearchParams({
         date: dateValue
@@ -63,6 +75,7 @@ app.dateSelector = () => {
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         app.gimmeData();
+        ul.innerHTML = '';
     })
 };
 
