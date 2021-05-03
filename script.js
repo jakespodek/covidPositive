@@ -31,7 +31,7 @@ app.displayData = (data) => {
     data.splice(11, 1);
     
     if (data[0].date == app.yesterday('day') && date.value != app.yesterday('year')) {
-        alert("Please use YYYY-MM-DD format");
+        alert("Please select a date using the YYYY-MM-DD format");
         return false
     }
 
