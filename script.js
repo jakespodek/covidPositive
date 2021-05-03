@@ -28,11 +28,14 @@ const ul = document.querySelector('.dataList');
 
 app.displayData = (data) => {
     
-    data.splice(11, 1);   
+    data.splice(11, 1);
+    
     if (data[0].date == app.yesterday('day') && date.value != app.yesterday('year')) {
         alert("Please use YYYY-MM-DD format");
         return false
     }
+
+    document.getElementById('dateDisplay').innerText = `As of ${date.value}:`
     
     data.forEach((item) => {
         for (const value in item) {
@@ -62,11 +65,9 @@ app.displayData = (data) => {
 
 app.gimmeData = () => {
     const url = new URL('https://api.opencovid.ca/summary')
-    const dateValue = date.value;
-    document.getElementById('dateDisplay').innerText = `As of ${dateValue}:`
 
     url.search = new URLSearchParams({
-        date: dateValue
+        date: date.value
     });
 
     fetch(url)
@@ -78,7 +79,6 @@ app.gimmeData = () => {
             console.log(jsonResponse);
             app.displayData(jsonResponse.summary);
         })
-    console.log(dateValue);
 }
 
 app.dateSelector = () => {
@@ -89,6 +89,7 @@ app.dateSelector = () => {
         event.preventDefault();
         app.gimmeData();
         ul.innerHTML = '';
+        dateDisplay.innerHTML = '';
     })
 };
 
@@ -97,8 +98,8 @@ app.yesterday = (format) => {
 
     date.setDate(date.getDate() - 1)
     month = '' + (date.getMonth() + 1),
-        day = '' + date.getDate(),
-        year = date.getFullYear();
+    day = '' + date.getDate(),
+    year = date.getFullYear();
 
     if (month.length < 2)
         month = '0' + month;
