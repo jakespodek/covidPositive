@@ -23,10 +23,16 @@ const app = {};
 const date = document.querySelector('input[type="date"]');
 const ul = document.querySelector('.dataList');
 
-
 app.displayData = (data) => {
     data.splice(11, 1);
     data.forEach((item) => {
+   
+        for (const value in item) {
+            if (item[value] === "NULL") {
+                item[value] = 0;
+            };
+        };
+
         const li = document.createElement('li');
         li.className = `box`;
         li.innerHTML = 
@@ -52,6 +58,7 @@ app.gimmeData = () => {
     const dateValue = date.value;
     document.getElementById('dateDisplay').innerText = `As of ${dateValue}:`
 
+    
     url.search = new URLSearchParams({
         date: dateValue
     });
