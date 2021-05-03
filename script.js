@@ -18,26 +18,29 @@
     // STRETCH GOAL:
         // spread some positive vibes by also generating a "vaccinated" gif(s) from GIPHY, somewhere on the page
 
+
+
 const app = {};
 
 const date = document.querySelector('input[type="date"]');
 const ul = document.querySelector('.dataList');
 
+
 app.displayData = (data) => {
-    data.splice(11, 1);
+    
+    data.splice(11, 1);   
+    if (data[0].date == app.yesterday('day') && date.value != app.yesterday('year')) {
+        alert("Please use YYYY-MM-DD format");
+        return false
+    }
+    
     data.forEach((item) => {
-   
         for (const value in item) {
             if (item[value] === "NULL") {
                 item[value] = 0;
             };
         };
-
-        if (item.date == app.yesterday('day') && date.value != app.yesterday('year')) {
-            alert("that's an error");
-            // event.stopPropagation();
-        }
-
+    
         const li = document.createElement('li');
         li.className = `box`;
         li.innerHTML = 
@@ -48,22 +51,20 @@ app.displayData = (data) => {
         <p>Vaccinated on this day: ${item.avaccine}</p>
         <p>Total Vaccinated: ${item.cumulative_avaccine}</p>
         `
-        ul.append(li);
+         ul.append(li);
     })
-    
+       
     document.querySelector('.BC').innerHTML = `<h2>British Columbia</h2>`
     document.querySelector('.NL').innerHTML = `<h2>Newfoundland and Labrador</h2>`
     document.querySelector('.NWT').innerHTML = `<h2>Northwest Territories</h2>`
     document.querySelector('.PEI').innerHTML = `<h2>Prince Edward Island</h2>`
 }
 
-
 app.gimmeData = () => {
     const url = new URL('https://api.opencovid.ca/summary')
     const dateValue = date.value;
     document.getElementById('dateDisplay').innerText = `As of ${dateValue}:`
 
-    
     url.search = new URLSearchParams({
         date: dateValue
     });
@@ -112,7 +113,6 @@ app.yesterday = (format) => {
 }
 
 console.log(`yesterday: ${app.yesterday('year')}`);
-
 
 app.init = () => {
     console.log('init!');
