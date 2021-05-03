@@ -33,6 +33,11 @@ app.displayData = (data) => {
             };
         };
 
+        if (item.date == app.yesterday('day') && date.value != app.yesterday('year')) {
+            alert("that's an error");
+            // event.stopPropagation();
+        }
+
         const li = document.createElement('li');
         li.className = `box`;
         li.innerHTML = 
@@ -77,7 +82,7 @@ app.gimmeData = () => {
 
 app.dateSelector = () => {
     const form = document.querySelector('form');
-    date.max = app.yesterday();
+    date.max = app.yesterday('year');
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
@@ -86,7 +91,7 @@ app.dateSelector = () => {
     })
 };
 
-app.yesterday = () => {
+app.yesterday = (format) => {
     const date = new Date();
 
     date.setDate(date.getDate() - 1)
@@ -99,10 +104,14 @@ app.yesterday = () => {
     if (day.length < 2)
         day = '0' + day;
 
-    return [year, month, day].join('-');
+    if (format == 'year') {
+        return [year, month, day].join('-');
+    }  else if (format == 'day') {
+        return [day, month, year].join('-');
+    }
 }
 
-console.log(`yesterday: ${app.yesterday()}`);
+console.log(`yesterday: ${app.yesterday('year')}`);
 
 
 app.init = () => {
