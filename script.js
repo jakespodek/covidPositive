@@ -57,10 +57,10 @@ app.displayData = (data) => {
          ul.append(li);
     })
        
-    document.querySelector('.BC').innerHTML = `<h2>British Columbia</h2>`
-    document.querySelector('.NL').innerHTML = `<h2>Newfoundland and Labrador</h2>`
-    document.querySelector('.NWT').innerHTML = `<h2>Northwest Territories</h2>`
-    document.querySelector('.PEI').innerHTML = `<h2>Prince Edward Island</h2>`
+    document.querySelector('.BC').innerHTML = `British Columbia`
+    document.querySelector('.NL').innerHTML = `Newfoundland and Labrador`
+    document.querySelector('.NWT').innerHTML = `Northwest Territories`
+    document.querySelector('.PEI').innerHTML = `Prince Edward Island`
 };
 
 app.gimmeData = () => {
