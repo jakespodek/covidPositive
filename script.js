@@ -61,7 +61,7 @@ app.displayData = (data) => {
     document.querySelector('.NL').innerHTML = `<h2>Newfoundland and Labrador</h2>`
     document.querySelector('.NWT').innerHTML = `<h2>Northwest Territories</h2>`
     document.querySelector('.PEI').innerHTML = `<h2>Prince Edward Island</h2>`
-}
+};
 
 app.gimmeData = () => {
     const url = new URL('https://api.opencovid.ca/summary')
@@ -79,7 +79,7 @@ app.gimmeData = () => {
             console.log(jsonResponse);
             app.displayData(jsonResponse.summary);
         })
-}
+};
 
 app.dateSelector = () => {
     const form = document.querySelector('form');
@@ -111,13 +111,13 @@ app.yesterday = (format) => {
     }  else if (format == 'day') {
         return [day, month, year].join('-');
     }
-}
+};
 
 console.log(`yesterday: ${app.yesterday('year')}`);
 
 app.init = () => {
     console.log('init!');
     app.dateSelector();
-}
+};
 
 app.init();
