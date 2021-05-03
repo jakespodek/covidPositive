@@ -262,6 +262,17 @@ a {
 
 .wrapper {
   margin: 0 auto;
-  max-width: "";
-  width: "";
+  max-width: 1440px;
+  width: 90%;
+}
+
+body {
+  background: #88deca;
+}
+
+.Alberta::before {
+  background: url(./assets/armsAB.png);
+  content: "";
+  height: 100px;
+  width: 50px;
 }
