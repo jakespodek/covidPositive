@@ -24,6 +24,7 @@ const app = {};
 
 app.date = document.querySelector('input[type="date"]');
 app.ul = document.querySelector('.dataList');
+app.intro = document.querySelector('.intro');
 
 
 app.displayData = (data) => {
@@ -31,6 +32,7 @@ app.displayData = (data) => {
     data.splice(11, 1);
     
     if (data[0].date == app.yesterday('day') && app.date.value != app.yesterday('year')) {
+        app.intro.style.display = 'block';
         alert("Please select a date using the YYYY-MM-DD format");
         return false
     }
@@ -87,6 +89,7 @@ app.dateSelector = () => {
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
+        app.intro.style.display = 'none';
         app.gimmeData();
         app.ul.replaceChildren()
         dateDisplay.textContent = ' '

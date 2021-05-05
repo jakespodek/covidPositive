@@ -9,6 +9,7 @@
     margin: 0 auto;
     max-width: 1440px;
     width: 90%;
+    min-height: calc(100vh - 85px);
 }
 
 body {
@@ -35,6 +36,10 @@ h2 {
     text-align: center;
     color: whitesmoke;
     padding-bottom: 5vh;
+    .syringe {
+        font-size: 3.5rem;
+        padding: 0.3rem 0.6rem 0 0.5rem;
+    }
 }
 
 main {
@@ -43,6 +48,19 @@ main {
     h2.dateDisplay {
         text-align: center;
         color: whitesmoke;
+    }
+    .intro {
+        color: whitesmoke;
+        padding-top: 7rem;
+        h2 {
+            text-align: center;
+            font-size: 3rem;
+        }
+        p {
+            width: 60%;
+            margin: 0 auto;
+            font-size: 1.8rem;
+        }
     }
 }
 
@@ -144,4 +162,14 @@ input[type="date"] {
 
 .Yukon::before {
     background-image: url(../assets/armsYK.png);
+}
+
+footer {
+    color: whitesmoke;
+    text-align: center;
+    height: 30px;
+    a {
+        color: whitesmoke;
+        text-decoration: none;
+    }
 }
