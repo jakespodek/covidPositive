@@ -18,15 +18,36 @@ body {
 //     position: relative;
 // }
 
-ul > * > :first-child::before {
-    content: "";
-    background-repeat: no-repeat;
-    display: inline-block;
-    background-size: 16px 20px;
-    height: 20px;
-    width: 20px;
-    // position: absolute;
-    // left: 55px 
+.dataList {
+    display: flex;
+    flex-direction: column;
+    li {
+        display: flex;
+        // flex-basis: calc(100% / 3);
+        justify-content: space-around;
+        align-items: center;
+        // align-items: baseline;
+        height: 10rem;
+        // width: 90%;
+        border: 5px solid rgba(255, 166, 0, 0.658);
+        border-radius: 5px;
+        box-shadow: 0 0 10px violet;
+        margin: 10px 0;
+        // div {
+        //     width: 33%;
+        //     text-align: left;
+        // }
+    }
+    > * > :first-child::before {
+        content: "";
+        background-repeat: no-repeat;
+        display: inline-block;
+        background-size: 16px 20px;
+        height: 20px;
+        width: 20px;
+        // position: absolute;
+        // left: 55px 
+    }
 }
 
 .Alberta::before {
@@ -53,7 +74,7 @@ ul > * > :first-child::before {
     background-image: url(../assets/armsNS.png);
 }
 
-.Nunavut::before {
+.dataList li h2.Nunavut::before {
     background-image: url(../assets/armsNU.png);
     background-size: 20px 20px;
 }

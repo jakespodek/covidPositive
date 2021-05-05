@@ -49,10 +49,10 @@ app.displayData = (data) => {
         li.innerHTML = 
         `  
         <h2 class=${item.province}>${item.province}</h2>
-        <p>Recovered on this day: ${(item.recovered).toLocaleString()}</p>
-        <p>Total Recovered: ${(item.cumulative_recovered).toLocaleString()}</p>
-        <p>Vaccinated on this day: ${(item.avaccine).toLocaleString()}</p>
-        <p>Total Vaccinated: ${(item.cumulative_avaccine).toLocaleString()}</p>
+        <div><p>Recovered on this day: ${(item.recovered).toLocaleString()}</p>
+        <p>Total Recovered: ${(item.cumulative_recovered).toLocaleString()}</p></div>
+        <div><p>Vaccinated on this day: ${(item.avaccine).toLocaleString()}</p>
+        <p>Total Vaccinated: ${(item.cumulative_avaccine).toLocaleString()}</p></div>
         `
          ul.append(li);
     })

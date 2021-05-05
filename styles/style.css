@@ -270,7 +270,34 @@ body {
   background: #88deca;
 }
 
-ul > * > :first-child::before {
+.dataList {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.dataList li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 10rem;
+  border: 5px solid rgba(255, 166, 0, 0.658);
+  border-radius: 5px;
+  -webkit-box-shadow: 0 0 10px violet;
+          box-shadow: 0 0 10px violet;
+  margin: 10px 0;
+}
+
+.dataList > * > :first-child::before {
   content: "";
   background-repeat: no-repeat;
   display: inline-block;
@@ -303,7 +330,7 @@ ul > * > :first-child::before {
   background-image: url(../assets/armsNS.png);
 }
 
-.Nunavut::before {
+.dataList li h2.Nunavut::before {
   background-image: url(../assets/armsNU.png);
   background-size: 20px 20px;
 }
