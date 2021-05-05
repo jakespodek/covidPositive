@@ -21,23 +21,7 @@ body {
 .dataList {
     display: flex;
     flex-direction: column;
-    li {
-        display: flex;
-        // flex-basis: calc(100% / 3);
-        justify-content: space-around;
-        align-items: center;
-        // align-items: baseline;
-        height: 10rem;
-        // width: 90%;
-        border: 5px solid rgba(255, 166, 0, 0.658);
-        border-radius: 5px;
-        box-shadow: 0 0 10px violet;
-        margin: 10px 0;
-        // div {
-        //     width: 33%;
-        //     text-align: left;
-        // }
-    }
+    
     > * > :first-child::before {
         content: "";
         background-repeat: no-repeat;
@@ -47,6 +31,27 @@ body {
         width: 20px;
         // position: absolute;
         // left: 55px 
+    }
+
+    .box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 10rem;
+        border: 5px solid rgba(255, 166, 0, 0.658);
+        border-radius: 5px;
+        box-shadow: 0 0 10px violet;
+        margin: 10px 0;
+
+        h2 { 
+            width: calc(100% / 3);
+            text-align: center;
+        }
+        
+        div {
+            width: calc(100% / 3);
+            text-align: left;
+        }
     }
 }
 

@@ -280,12 +280,22 @@ body {
           flex-direction: column;
 }
 
-.dataList li {
+.dataList > * > :first-child::before {
+  content: "";
+  background-repeat: no-repeat;
+  display: inline-block;
+  background-size: 16px 20px;
+  height: 20px;
+  width: 20px;
+}
+
+.dataList .box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -297,13 +307,14 @@ body {
   margin: 10px 0;
 }
 
-.dataList > * > :first-child::before {
-  content: "";
-  background-repeat: no-repeat;
-  display: inline-block;
-  background-size: 16px 20px;
-  height: 20px;
-  width: 20px;
+.dataList .box h2 {
+  width: calc(100% / 3);
+  text-align: center;
+}
+
+.dataList .box div {
+  width: calc(100% / 3);
+  text-align: left;
 }
 
 .Alberta::before {
