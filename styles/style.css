@@ -292,6 +292,10 @@ h2 {
   padding-bottom: 5vh;
 }
 
+main {
+  padding-bottom: 10vh;
+}
+
 main form,
 main h2.dateDisplay {
   text-align: center;

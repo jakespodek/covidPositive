@@ -22,20 +22,20 @@
 
 const app = {};
 
-const date = document.querySelector('input[type="date"]');
-const ul = document.querySelector('.dataList');
+app.date = document.querySelector('input[type="date"]');
+app.ul = document.querySelector('.dataList');
 
 
 app.displayData = (data) => {
     
     data.splice(11, 1);
     
-    if (data[0].date == app.yesterday('day') && date.value != app.yesterday('year')) {
+    if (data[0].date == app.yesterday('day') && app.date.value != app.yesterday('year')) {
         alert("Please select a date using the YYYY-MM-DD format");
         return false
     }
 
-    document.getElementById('dateDisplay').innerText = `As of ${date.value}:`
+    document.getElementById('dateDisplay').innerText = `As of ${app.date.value}:`
     
     data.forEach((item) => {
         for (const value in item) {
@@ -54,7 +54,7 @@ app.displayData = (data) => {
         <div><p>Vaccinated on this day: ${(item.avaccine).toLocaleString()}</p>
         <p>Total Vaccinated: ${(item.cumulative_avaccine).toLocaleString()}</p></div>
         `
-         ul.append(li);
+         app.ul.append(li);
     })
        
     document.querySelector('.BC').innerHTML = `British Columbia`
@@ -67,7 +67,7 @@ app.gimmeData = () => {
     const url = new URL('https://api.opencovid.ca/summary')
 
     url.search = new URLSearchParams({
-        date: date.value
+        date: app.date.value
     });
 
     fetch(url)
@@ -83,13 +83,13 @@ app.gimmeData = () => {
 
 app.dateSelector = () => {
     const form = document.querySelector('form');
-    date.max = app.yesterday('year');
+    app.date.max = app.yesterday('year');
 
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         app.gimmeData();
-        ul.innerHTML = '';
-        dateDisplay.innerHTML = '';
+        app.ul.replaceChildren()
+        dateDisplay.textContent = ' '
     })
 };
 
