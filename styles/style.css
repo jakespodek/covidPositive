@@ -269,7 +269,7 @@ a {
 }
 
 body {
-  background: #1e1e1e;
+  background: rgba(20, 0, 54, 0.92);
   font-family: 'Nunito', sans-serif;
   font-size: 1.5rem;
 }
@@ -309,8 +309,16 @@ main h2.dateDisplay {
 }
 
 main .intro {
-  color: whitesmoke;
-  padding-top: 7rem;
+  color: #000;
+  background: #41b7e6d8;
+  border: 3px solid #86bd61;
+  margin: 0 auto;
+  margin-top: 7rem;
+  padding: 2rem 0 5rem;
+  -webkit-box-shadow: 0 0 20px #77ee27;
+          box-shadow: 0 0 20px #77ee27;
+  border-radius: 20px;
+  width: 75%;
 }
 
 main .intro h2 {
@@ -319,7 +327,7 @@ main .intro h2 {
 }
 
 main .intro p {
-  width: 60%;
+  width: 90%;
   margin: 0 auto;
   font-size: 1.8rem;
 }
@@ -362,12 +370,12 @@ input[type="date"] {
       -ms-flex-align: center;
           align-items: center;
   height: 12rem;
-  border: 3px solid #bd61a4;
+  border: 3px solid #86bd61;
   border-radius: 5px;
-  -webkit-box-shadow: 0 0 10px violet;
-          box-shadow: 0 0 10px violet;
+  -webkit-box-shadow: 0 0 10px #77ee27;
+          box-shadow: 0 0 10px #77ee27;
   margin: 10px 0;
-  background: #41B6E6;
+  background: #41b7e6d8;
   position: relative;
 }
 

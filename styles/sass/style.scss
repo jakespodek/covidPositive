@@ -1,7 +1,6 @@
 @import "./partials/setup";
 @import "./partials/variables";
 @import "./partials/typography";
-@import "./partials/index";
 @import url('https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Bungee+Shade&family=Nunito&display=swap');
 
 // STYLE
@@ -50,14 +49,21 @@ main {
         color: $lightText;
     }
     .intro {
-        color: $lightText;
-        padding-top: 7rem;
+        color: $darkText;
+        background: $boxBackground;
+        border: 3px solid $boxBorder;
+        margin: 0 auto;
+        margin-top: 7rem;
+        padding: 2rem 0 5rem;
+        box-shadow: 0 0 20px $boxShadow;
+        border-radius: 20px;
+        width: 75%;
         h2 {
             text-align: center;
             font-size: 3rem;
         }
         p {
-            width: 60%;
+            width: 90%;
             margin: 0 auto;
             font-size: 1.8rem;
         }
