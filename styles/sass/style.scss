@@ -14,7 +14,7 @@
 
 body {
     // background: #88deca;
-    background: #1e1e1e;
+    background: $bodyBackground;
     font-family: 'Nunito', sans-serif;
     font-size: 1.5rem;
 }
@@ -34,7 +34,7 @@ h2 {
 
 .headingContainer {
     text-align: center;
-    color: whitesmoke;
+    color: $lightText;
     padding-bottom: 5vh;
     .syringe {
         font-size: 3.5rem;
@@ -47,10 +47,10 @@ main {
     form,
     h2.dateDisplay {
         text-align: center;
-        color: whitesmoke;
+        color: $lightText;
     }
     .intro {
-        color: whitesmoke;
+        color: $lightText;
         padding-top: 7rem;
         h2 {
             text-align: center;
@@ -85,15 +85,16 @@ input[type="date"] {
     }
     
     .box {
+        color: $darkText;
         display: flex;
         justify-content: center;
         align-items: center;
         height: 12rem;
-        border: 3px solid #bd61a4;
+        border: 3px solid $boxBorder;
         border-radius: 5px;
-        box-shadow: 0 0 10px violet;
+        box-shadow: 0 0 10px $boxShadow;
         margin: 10px 0;
-        background: #41B6E6;
+        background: $boxBackground;
         position: relative;
         
         h2 { 
@@ -165,11 +166,11 @@ input[type="date"] {
 }
 
 footer {
-    color: whitesmoke;
+    color: $lightText;
     text-align: center;
     height: 30px;
     a {
-        color: whitesmoke;
+        color: $lightText;
         text-decoration: none;
     }
 }
