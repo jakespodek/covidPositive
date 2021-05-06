@@ -15,7 +15,7 @@ body {
     // background: #88deca;
     background: $bodyBackground;
     font-family: 'Nunito', sans-serif;
-    font-size: 1.5rem;
+    font-size: 2rem;
 }
 
 h1 {
@@ -178,5 +178,34 @@ footer {
     a {
         color: $lightText;
         text-decoration: none;
+    }
+}
+
+// MEDIA QUERIES
+
+@media (max-width: 1100px) {
+    .dataList {
+        .box {
+            flex-wrap: wrap;
+            height: 20rem;
+            h2 {
+                width: 100%;
+                padding: 0;
+            }
+            div {
+                align-self: baseline;
+                width: auto;
+                padding: 0 5%;
+            }
+        }
+        > * > :first-child::before {
+            height: 7rem;
+            width: 7rem;
+            left: 4%; 
+            top: 31%;
+        }
+        > * > .Nunavut::before {
+            left: 3.5%;
+        }
     }
 }

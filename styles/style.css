@@ -271,7 +271,7 @@ a {
 body {
   background: rgba(20, 0, 54, 0.92);
   font-family: 'Nunito', sans-serif;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 h1 {
@@ -453,4 +453,31 @@ footer {
 footer a {
   color: whitesmoke;
   text-decoration: none;
+}
+
+@media (max-width: 1100px) {
+  .dataList .box {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    height: 20rem;
+  }
+  .dataList .box h2 {
+    width: 100%;
+    padding: 0;
+  }
+  .dataList .box div {
+    -ms-flex-item-align: baseline;
+        align-self: baseline;
+    width: auto;
+    padding: 0 5%;
+  }
+  .dataList > * > :first-child::before {
+    height: 7rem;
+    width: 7rem;
+    left: 4%;
+    top: 31%;
+  }
+  .dataList > * > .Nunavut::before {
+    left: 3.5%;
+  }
 }
