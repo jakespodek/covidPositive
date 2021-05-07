@@ -16,6 +16,7 @@ body {
     background: $bodyBackground;
     font-family: 'Nunito', sans-serif;
     font-size: 2rem;
+    font-weight: bold;
 }
 
 h1 {
@@ -231,4 +232,61 @@ footer {
             left: 3.5%;
         }
     }
+}
+
+
+@media (max-width: 970px) {
+    .dataList {
+        
+        > * > :first-child::before {
+            height: 5rem;
+            width: 5rem;
+            left: 3%; 
+            top: 10%;
+        }
+    }
+}
+
+@media (max-width: 795px) {
+    .dataList {
+        .box {
+            height: 30rem;
+            // flex-direction: column;
+
+            div {
+                // align-self: ;
+                text-align: center;
+                width: 100%;
+                padding: 0;
+            }
+            
+        }
+
+        > * > :first-child::before {
+            height: 10rem;
+            width: 10rem;
+            left: 5%; 
+            top: 31%;
+        }
+    }
+
+}
+
+@media (max-width: 580px) {
+    .dataList {
+        .box {
+            height: 30rem;
+
+            div {
+                text-align: center;
+                width: 100%;
+            }
+        }
+
+        > * > :first-child::before {
+                display: none;
+        }
+
+    }
+
 }
