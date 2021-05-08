@@ -12,7 +12,6 @@
 }
 
 body {
-    // background: #88deca;
     background: $bodyBackground;
     font-family: 'Nunito', sans-serif;
     font-size: 2rem;
@@ -24,7 +23,7 @@ h1 {
     font-family: 'Bungee Shade', cursive;
     font-size: 5rem;
     font-weight: normal;
-    text-shadow: -0.1rem 0.1rem 1rem $boxBorder;
+    text-shadow: -0.1rem 0.1rem 1rem $pink;
 }
 
 h2 {
@@ -92,7 +91,7 @@ main {
         cursor: pointer;
     }
     button {
-        background: #EF6F6C;
+        background: $pink;
     }
     input[type="date"]:hover,
     button:hover {

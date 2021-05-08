@@ -26,7 +26,6 @@ app.date = document.querySelector('input[type="date"]');
 app.ul = document.querySelector('.dataList');
 app.intro = document.querySelector('.intro');
 
-
 app.displayData = (data) => {
     
     data.splice(11, 1);
