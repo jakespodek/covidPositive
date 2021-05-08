@@ -36,7 +36,7 @@ h2 {
 .headingContainer {
     text-align: center;
     color: $lightText;
-    padding-bottom: 5vh;
+    padding-bottom: 1vh;
     .syringe {
         font-size: 3.5rem;
         padding: 0.3rem 0.6rem 0 0.5rem;
@@ -58,8 +58,8 @@ main {
         background: $boxBackground;
         border: 0.3rem solid $boxBorder;
         margin: 0 auto;
-        margin-top: 7rem;
-        padding: 2rem 0 5rem;
+        margin-top: 2rem;
+        padding: 0 0 2rem;
         box-shadow: 0 0 2rem $boxShadow;
         border-radius: 2rem;
         width: 75%;
@@ -73,7 +73,7 @@ main {
             font-size: 1.8rem;
         }
         img {
-            margin: 5rem auto 0;
+            margin: 2rem auto 0;
             width: 50%;
             height: auto;
         }
@@ -256,11 +256,9 @@ footer {
 }
 
 @media (max-width: 795px) {
-    main {
-        .intro {
-            img {
-                width: 75%;
-            }
+    main .intro {
+        img {
+            width: 75%;
         }
     }
     .dataList {
@@ -297,4 +295,10 @@ footer {
         margin-top: 1.5rem;
     }
 
+    .intro {
+        h2 {
+        padding-right: 0.5rem;
+        padding-left: 0.5rem;
+        }
+    }
 }

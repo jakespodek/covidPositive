@@ -292,7 +292,7 @@ h2 {
 .headingContainer {
   text-align: center;
   color: whitesmoke;
-  padding-bottom: 5vh;
+  padding-bottom: 1vh;
 }
 
 .headingContainer .syringe {
@@ -317,8 +317,8 @@ main .intro {
   background: #41b7e6d8;
   border: 0.3rem solid #86bd61;
   margin: 0 auto;
-  margin-top: 7rem;
-  padding: 2rem 0 5rem;
+  margin-top: 2rem;
+  padding: 0 0 2rem;
   -webkit-box-shadow: 0 0 2rem #77ee27;
           box-shadow: 0 0 2rem #77ee27;
   border-radius: 2rem;
@@ -337,7 +337,7 @@ main .intro p {
 }
 
 main .intro img {
-  margin: 5rem auto 0;
+  margin: 2rem auto 0;
   width: 50%;
   height: auto;
 }
@@ -554,5 +554,9 @@ footer a {
   }
   button {
     margin-top: 1.5rem;
+  }
+  .intro h2 {
+    padding-right: 0.5rem;
+    padding-left: 0.5rem;
   }
 }
