@@ -336,6 +336,12 @@ main .intro p {
   font-size: 1.8rem;
 }
 
+main .intro img {
+  margin: 5rem auto 0;
+  width: 50%;
+  height: auto;
+}
+
 main label {
   display: block;
   font-weight: bold;
@@ -523,6 +529,9 @@ footer a {
 }
 
 @media (max-width: 795px) {
+  main .intro img {
+    width: 75%;
+  }
   .dataList .box {
     height: 30rem;
   }

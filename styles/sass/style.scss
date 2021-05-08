@@ -72,6 +72,11 @@ main {
             margin: 0 auto;
             font-size: 1.8rem;
         }
+        img {
+            margin: 5rem auto 0;
+            width: 50%;
+            height: auto;
+        }
     }
     label {
         display: block;
@@ -251,6 +256,13 @@ footer {
 }
 
 @media (max-width: 795px) {
+    main {
+        .intro {
+            img {
+                width: 75%;
+            }
+        }
+    }
     .dataList {
         .box {
             height: 30rem;

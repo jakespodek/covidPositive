@@ -78,7 +78,6 @@ app.gimmeData = () => {
         })
 
         .then((jsonResponse) => {
-            console.log(jsonResponse);
             app.displayData(jsonResponse.summary);
         })
 };
@@ -91,8 +90,8 @@ app.dateSelector = () => {
         event.preventDefault();
         app.intro.style.display = 'none';
         app.gimmeData();
-        app.ul.replaceChildren()
-        dateDisplay.textContent = ' '
+        app.ul.innerHTML = ' ';
+        dateDisplay.textContent = ' ';
     })
 };
 
@@ -116,28 +115,38 @@ app.yesterday = (format) => {
     }
 };
 
-console.log(`yesterday: ${app.yesterday('year')}`);
+// GIPHY METHODS
+app.displayGifs = (gifs) => {
+    const gifContainer = document.createElement('img');
 
-app.init = () => {
-    console.log('init!');
-    app.dateSelector();
-};
+    i = Math.floor(Math.random() * gifs.data.length);
+    gifContainer.alt = gifs.data[i].title;
+    gifContainer.src = gifs.data[i].images.original.url;
 
-app.init();
+    app.intro.append(gifContainer);
+}
 
-// GIPHY APP
 
-const giphyUrl = new URL(`https://api.giphy.com/v1/gifs`)
-    
+app.gimmeGifs = () => {
+    const giphyUrl = new URL(`https://api.giphy.com/v1/gifs`)
+
     giphyUrl.search = new URLSearchParams({
         api_key: 'HVo4BiCuwH7vyhWSzlAfRqhIp06cIt7O',
-        ids: 'D6dBdLMT3Y1SZZFFtJ, RPqLAs6u4z0YUTsOCM, rIlmnpIaVVoxOwD9e0, sfFM0VWuQfINlsHFVY, zDLeiIHrabdtWN6MxN'
+        ids: 'jGXxbKsmdUSXvBsd4l, EmbD6Qia2yKbLXpd2U, zQ6htTN6ZbsJa8rTrp, dRi7EJ5q9Xfb7PcoY0, zDLeiIHrabdtWN6MxN'
     });
-    
+
     fetch(giphyUrl)
         .then((giphyData) => {
             return giphyData.json();
         })
         .then((jsonGiphyResponse) => {
-            console.log(jsonGiphyResponse);
+            app.displayGifs(jsonGiphyResponse);
         })
+};
+
+app.init = () => {
+    app.dateSelector();
+    app.gimmeGifs();
+};
+
+app.init();
