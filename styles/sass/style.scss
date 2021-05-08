@@ -80,21 +80,21 @@ main {
     input[type="date"],
     button {
         border-radius: 0.5rem;
-        border: 0.3rem solid $boxBorder;
-        box-shadow: 0 0 0.3rem $boxShadow;
+        border: none;
         padding: 1rem 3rem;
         font-weight: bold;
         background: $boxBackground;
+        cursor: pointer;
     }
     button {
-        // background: $boxBorder;
-        // background-image: linear-gradient(45deg, $boxBorder,$boxBorder, $boxBackground);
-        background: $boxBorder;
+        background: #EF6F6C;
+    }
+    input[type="date"]:hover,
+    button:hover {
+        box-shadow: 0 0 0.5rem $boxShadow;
     }
     button:hover {
         background: $boxBorder;
-        border: 0.3rem solid $boxBackground;
-        cursor: pointer;
     }
 }
 

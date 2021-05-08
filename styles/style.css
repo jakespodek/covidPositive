@@ -344,22 +344,25 @@ main label {
 main input[type="date"],
 main button {
   border-radius: 0.5rem;
-  border: 0.3rem solid #86bd61;
-  -webkit-box-shadow: 0 0 0.3rem #77ee27;
-          box-shadow: 0 0 0.3rem #77ee27;
+  border: none;
   padding: 1rem 3rem;
   font-weight: bold;
   background: #41b7e6d8;
+  cursor: pointer;
 }
 
 main button {
-  background: #86bd61;
+  background: #EF6F6C;
+}
+
+main input[type="date"]:hover,
+main button:hover {
+  -webkit-box-shadow: 0 0 0.5rem #77ee27;
+          box-shadow: 0 0 0.5rem #77ee27;
 }
 
 main button:hover {
   background: #86bd61;
-  border: 0.3rem solid #41b7e6d8;
-  cursor: pointer;
 }
 
 .dataList {
