@@ -124,3 +124,20 @@ app.init = () => {
 };
 
 app.init();
+
+// GIPHY APP
+
+const giphyUrl = new URL(`https://api.giphy.com/v1/gifs`)
+    
+    giphyUrl.search = new URLSearchParams({
+        api_key: 'HVo4BiCuwH7vyhWSzlAfRqhIp06cIt7O',
+        ids: 'D6dBdLMT3Y1SZZFFtJ, RPqLAs6u4z0YUTsOCM, rIlmnpIaVVoxOwD9e0, sfFM0VWuQfINlsHFVY, zDLeiIHrabdtWN6MxN'
+    });
+    
+    fetch(giphyUrl)
+        .then((giphyData) => {
+            return giphyData.json();
+        })
+        .then((jsonGiphyResponse) => {
+            console.log(jsonGiphyResponse);
+        })
