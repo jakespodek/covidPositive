@@ -265,7 +265,7 @@ a {
   margin: 0 auto;
   max-width: 1440px;
   width: 90%;
-  min-height: calc(100vh - 100px);
+  min-height: calc(100vh - 10rem);
 }
 
 body {
@@ -280,6 +280,7 @@ h1 {
   font-family: 'Bungee Shade', cursive;
   font-size: 5rem;
   font-weight: normal;
+  text-shadow: -0.1rem 0.1rem 1rem #86bd61;
 }
 
 h2 {
@@ -314,13 +315,13 @@ main h2.dateDisplay {
 main .intro {
   color: #000;
   background: #41b7e6d8;
-  border: 3px solid #86bd61;
+  border: 0.3rem solid #86bd61;
   margin: 0 auto;
   margin-top: 7rem;
   padding: 2rem 0 5rem;
-  -webkit-box-shadow: 0 0 20px #77ee27;
-          box-shadow: 0 0 20px #77ee27;
-  border-radius: 20px;
+  -webkit-box-shadow: 0 0 2rem #77ee27;
+          box-shadow: 0 0 2rem #77ee27;
+  border-radius: 2rem;
   width: 75%;
 }
 
@@ -342,10 +343,10 @@ main label {
 
 main input[type="date"],
 main button {
-  border-radius: 5px;
-  border: 3px solid #86bd61;
-  -webkit-box-shadow: 0 0 3px #77ee27;
-          box-shadow: 0 0 3px #77ee27;
+  border-radius: 0.5rem;
+  border: 0.3rem solid #86bd61;
+  -webkit-box-shadow: 0 0 0.3rem #77ee27;
+          box-shadow: 0 0 0.3rem #77ee27;
   padding: 1rem 3rem;
   font-weight: bold;
   background: #41b7e6d8;
@@ -357,7 +358,7 @@ main button {
 
 main button:hover {
   background: #86bd61;
-  border: 3px solid #41b7e6d8;
+  border: 0.3rem solid #41b7e6d8;
   cursor: pointer;
 }
 
@@ -395,11 +396,11 @@ main button:hover {
       -ms-flex-align: center;
           align-items: center;
   height: 12rem;
-  border: 3px solid #86bd61;
-  border-radius: 5px;
-  -webkit-box-shadow: 0 0 10px #77ee27;
-          box-shadow: 0 0 10px #77ee27;
-  margin: 10px 0;
+  border: 0.3rem solid #86bd61;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: 0 0 1rem #77ee27;
+          box-shadow: 0 0 1rem #77ee27;
+  margin: 1rem 0;
   background: #41b7e6d8;
   position: relative;
 }
@@ -409,6 +410,8 @@ main button:hover {
   text-align: center;
   padding: 0 10rem;
   font-size: 2rem;
+  -webkit-text-decoration: 0.2rem underline #86bd61;
+          text-decoration: 0.2rem underline #86bd61;
 }
 
 .dataList .box div {
@@ -472,7 +475,7 @@ main button:hover {
 footer {
   color: whitesmoke;
   text-align: center;
-  height: 30px;
+  height: 3rem;
 }
 
 footer a {
@@ -534,14 +537,10 @@ footer a {
 }
 
 @media (max-width: 580px) {
-  .dataList .box {
-    height: 30rem;
-  }
-  .dataList .box div {
-    text-align: center;
-    width: 100%;
-  }
   .dataList > * > :first-child::before {
     display: none;
+  }
+  button {
+    margin-top: 1.5rem;
   }
 }
