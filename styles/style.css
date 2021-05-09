@@ -241,8 +241,24 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  background: rgba(20, 0, 54, 0.92);
+  font-family: 'Nunito', sans-serif;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+h1 {
+  font-family: 'Bungee Shade', cursive;
+  font-size: 5rem;
+  font-weight: normal;
+  text-shadow: -0.1rem 0.1rem 1rem #EF6F6C;
+}
+
 h2 {
-  font-size: 1.5rem;
+  font-family: 'Bungee Inline', cursive;
+  font-weight: normal;
+  font-size: 2rem;
 }
 
 ul {
@@ -266,27 +282,6 @@ a {
   max-width: 1440px;
   width: 90%;
   min-height: calc(100vh - 10rem);
-}
-
-body {
-  background: rgba(20, 0, 54, 0.92);
-  font-family: 'Nunito', sans-serif;
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-h1 {
-  text-transform: uppercase;
-  font-family: 'Bungee Shade', cursive;
-  font-size: 5rem;
-  font-weight: normal;
-  text-shadow: -0.1rem 0.1rem 1rem #EF6F6C;
-}
-
-h2 {
-  font-family: 'Bungee Inline', cursive;
-  font-weight: normal;
-  font-size: 2rem;
 }
 
 .headingContainer {
@@ -316,8 +311,7 @@ main .intro {
   color: #000;
   background: #41b7e6d8;
   border: 0.3rem solid #86bd61;
-  margin: 0 auto;
-  margin-top: 2rem;
+  margin: 2rem auto 0;
   padding: 0 0 2rem;
   -webkit-box-shadow: 0 0 2rem #77ee27;
           box-shadow: 0 0 2rem #77ee27;
@@ -338,9 +332,7 @@ main .intro p {
 }
 
 main .intro p:last-of-type {
-  color: #000;
   text-align: right;
-  text-transform: uppercase;
   font-family: 'Bungee Inline', cursive;
   font-size: 2rem;
   font-weight: normal;
@@ -356,16 +348,14 @@ main .intro p:last-of-type::before {
 main .intro img {
   margin: 2rem auto 0;
   width: 50%;
-  height: auto;
 }
 
-main label {
+main form label {
   display: block;
-  font-weight: bold;
 }
 
-main input[type="date"],
-main button {
+main form input[type="date"],
+main form button {
   border-radius: 0.5rem;
   border: none;
   padding: 1rem 3rem;
@@ -374,17 +364,17 @@ main button {
   cursor: pointer;
 }
 
-main button {
+main form button {
   background: #EF6F6C;
 }
 
-main input[type="date"]:hover,
-main button:hover {
+main form input[type="date"]:hover,
+main form button:hover {
   -webkit-box-shadow: 0 0 0.5rem #77ee27;
           box-shadow: 0 0 0.5rem #77ee27;
 }
 
-main button:hover {
+main form button:hover {
   background: #86bd61;
 }
 
@@ -401,7 +391,6 @@ main button:hover {
 .dataList > * > :first-child::before {
   content: "";
   background-repeat: no-repeat;
-  display: inline-block;
   background-size: 80% 100%;
   height: calc(2.5rem + 1.5vw);
   width: calc(2.5rem + 1.5vw);
@@ -411,7 +400,6 @@ main button:hover {
 }
 
 .dataList .box {
-  color: #000;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -566,14 +554,14 @@ footer a {
 }
 
 @media (max-width: 580px) {
-  .dataList > * > :first-child::before {
-    display: none;
-  }
   button {
     margin-top: 1.5rem;
   }
   .intro h2 {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
+  }
+  .dataList > * > :first-child::before {
+    display: none;
   }
 }

@@ -1,49 +1,50 @@
-//Covid, Positive - app code
+// COVID, POSITIVE SCRIPT
 
-    // Have the user input a date using input[type="date"] 
-        // BUT for Safari and IE have them input a date manually with error handling for format
-
-    // add an event listener for date submission that will then generate the data based on date's value
-
-    // stop the page from refreshing 
-
-    // connect to the opencovid API and filter info by date
-        // take the recovered cases, as well as total vaccinated by province
-        // loop this info and put it into a newly created <li>
-        // append to the <ul>
-        // display data on the page
-
-    // allow for user to change date with new results generating without having to refresh the page
-
-    // STRETCH GOAL:
-        // spread some positive vibes by also generating a "vaccinated" gif(s) from GIPHY, somewhere on the page
-
-
+// APP OBJECT
 
 const app = {};
+
+// VARIABLES 
 
 app.date = document.querySelector('input[type="date"]');
 app.ul = document.querySelector('.dataList');
 app.intro = document.querySelector('.intro');
+app.dateDisplay = document.getElementById('dateDisplay');
+app.form = document.querySelector('form');
+
+// GENERAL DISPLAY METHOD
 
 app.displayData = (data) => {
     
+    // SPLICE OUT REPATRIATED
+    
     data.splice(11, 1);
+    
+    // ERROR HANDLING FOR DATE INPUT
     
     if (data[0].date == app.yesterday('day') && app.date.value != app.yesterday('year')) {
         app.intro.style.display = 'block';
         alert("Please select a date using the YYYY-MM-DD format");
         return false
     }
-
-    document.getElementById('dateDisplay').innerText = `As of ${app.date.value}:`
+    
+    // LOOP THROUGH THE DATA
     
     data.forEach((item) => {
+        
+        // ERROR HANDLING FOR "NULL" RESULTS
+        
         for (const value in item) {
             if (item[value] === "NULL") {
                 item[value] = 0;
             };
         };
+
+        // SHOW TODAY'S DATE
+        
+        app.dateDisplay.innerText = `As of ${app.date.value}:`
+        
+        // CREATE "LI"s AND READY TO SHOW THE DATA
     
         const li = document.createElement('li');
         li.className = `box`;
@@ -57,6 +58,8 @@ app.displayData = (data) => {
         `
          app.ul.append(li);
     })
+
+    // FIX FOR ABBREVIATED PROVINCES TO FULL NAMES
        
     document.querySelector('.BC').innerHTML = `British Columbia`
     document.querySelector('.NL').innerHTML = `Newfoundland and Labrador`
@@ -64,8 +67,12 @@ app.displayData = (data) => {
     document.querySelector('.PEI').innerHTML = `Prince Edward Island`
 };
 
+// CALL to opencovid API METHOD 
+
 app.gimmeData = () => {
     const url = new URL('https://api.opencovid.ca/summary')
+
+    // USE DATE AS A SEARCH PARAM
 
     url.search = new URLSearchParams({
         date: app.date.value
@@ -81,11 +88,16 @@ app.gimmeData = () => {
         })
 };
 
+// FILTERING THE DATA BY DATE METHOD
+// AND 
+// CALLING THE DISPLAY METHOD 
+
 app.dateSelector = () => {
-    const form = document.querySelector('form');
     app.date.max = app.yesterday('year');
 
-    form.addEventListener('submit', (event) => {
+    // DISPLAYING THE CORRECT, FILTERED DATA ONTO THE PAGE
+
+    app.form.addEventListener('submit', (event) => {
         event.preventDefault();
         app.intro.style.display = 'none';
         app.gimmeData();
@@ -93,6 +105,8 @@ app.dateSelector = () => {
         dateDisplay.textContent = ' ';
     })
 };
+
+// METHOD TO DETERMINE YESTERDAY'S DATE
 
 app.yesterday = (format) => {
     const date = new Date();
@@ -107,6 +121,8 @@ app.yesterday = (format) => {
     if (day.length < 2)
         day = '0' + day;
 
+    // USED FOR ERROR HANDLING FOR DISPLAY DATA METHOD 
+
     if (format == 'year') {
         return [year, month, day].join('-');
     }  else if (format == 'day') {
@@ -114,17 +130,25 @@ app.yesterday = (format) => {
     }
 };
 
-// GIPHY METHODS
+// ADDITIONAL: GIPHY METHODS----------------------------------------------------
+
+// DISPLAY GIFS METHOD
+
 app.displayGifs = (gifs) => {
     const gifContainer = document.createElement('img');
+
+    // GIPHY RANDOMIZER 
 
     i = Math.floor(Math.random() * gifs.data.length);
     gifContainer.alt = gifs.data[i].title;
     gifContainer.src = gifs.data[i].images.original.url;
 
+    // APPENDINGS GIFS TO DOM
+
     app.intro.append(gifContainer);
 }
 
+// CALL TO giphy API METHOD
 
 app.gimmeGifs = () => {
     const giphyUrl = new URL(`https://api.giphy.com/v1/gifs`)
@@ -142,6 +166,8 @@ app.gimmeGifs = () => {
             app.displayGifs(jsonGiphyResponse);
         })
 };
+
+// INIT METHOD
 
 app.init = () => {
     app.dateSelector();
