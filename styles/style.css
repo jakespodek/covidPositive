@@ -348,6 +348,11 @@ main .intro p:last-of-type {
   text-shadow: -0.1rem 0.1rem #EF6F6C;
 }
 
+main .intro p:last-of-type::before {
+  content: "- ";
+  text-shadow: none;
+}
+
 main .intro img {
   margin: 2rem auto 0;
   width: 50%;
