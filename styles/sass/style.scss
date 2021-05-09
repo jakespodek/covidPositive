@@ -64,12 +64,23 @@ main {
         width: 75%;
         h2 {
             text-align: center;
-            font-size: 3rem;
+            font-size: 2.5rem;
         }
         p {
             width: 90%;
             margin: 0 auto;
             font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+        }
+        p:last-of-type {
+            color: $darkText;
+            text-align: right;
+            text-transform: uppercase;
+            font-family: 'Bungee Inline', cursive;
+            font-size: 2rem;
+            font-weight: normal;
+            margin-bottom: 5rem;
+            text-shadow: -0.1rem 0.1rem $pink;
         }
         img {
             margin: 2rem auto 0;

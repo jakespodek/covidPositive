@@ -327,13 +327,25 @@ main .intro {
 
 main .intro h2 {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
 }
 
 main .intro p {
   width: 90%;
   margin: 0 auto;
   font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+main .intro p:last-of-type {
+  color: #000;
+  text-align: right;
+  text-transform: uppercase;
+  font-family: 'Bungee Inline', cursive;
+  font-size: 2rem;
+  font-weight: normal;
+  margin-bottom: 5rem;
+  text-shadow: -0.1rem 0.1rem #EF6F6C;
 }
 
 main .intro img {
