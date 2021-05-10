@@ -117,7 +117,7 @@ main {
     // ARMS
     
     > * > :first-child::before {
-        content: "";
+        content: " ";
         background-repeat: no-repeat;
         background-size: 80% 100%;
         height: calc(2.5rem + 1.5vw);
@@ -244,7 +244,7 @@ footer {
             div {
                 align-self: baseline;
                 width: auto;
-                padding: 0 5%;
+                padding: 0 4%;
             }
         }
 

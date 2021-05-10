@@ -16,7 +16,7 @@ app.form = document.querySelector('form');
 
 app.displayData = (data) => {
     
-    // SPLICE OUT REPATRIATED
+    // SPLICE OUT "REPATRIATED" DATA
     
     data.splice(11, 1);
     
@@ -44,7 +44,7 @@ app.displayData = (data) => {
         
         app.dateDisplay.innerText = `As of ${app.date.value}:`
         
-        // CREATE "LI"s AND READY TO SHOW THE DATA
+        // CREATE <li>'s AND READY TO SHOW THE DATA
     
         const li = document.createElement('li');
         li.className = `box`;
