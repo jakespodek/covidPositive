@@ -490,10 +490,13 @@ footer {
   color: whitesmoke;
   text-align: center;
   height: 3rem;
+  font-size: 1.5rem;
+  padding: 0 2rem;
 }
 
 footer a {
   color: whitesmoke;
+  color: #41b7e6d8;
   text-decoration: none;
 }
 

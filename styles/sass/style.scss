@@ -217,9 +217,12 @@ footer {
     color: $lightText;
     text-align: center;
     height: 3rem;
-    
+    font-size: 1.5rem;
+    padding: 0 2rem;
+
     a {
         color: $lightText;
+        color: $boxBackground;
         text-decoration: none;
     }
 }
