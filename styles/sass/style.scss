@@ -225,6 +225,9 @@ footer {
         color: $boxBackground;
         text-decoration: none;
     }
+    a:hover {
+        text-decoration: underline;
+    }
 }
 
 // MEDIA QUERIES
